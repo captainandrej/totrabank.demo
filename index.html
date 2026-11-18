@@ -349,7 +349,7 @@
 
                         <div class="bg-[#1C1E24] rounded-[14px] px-4 pt-5 pb-4 border border-neutral-800/50 shadow-lg">
                             <div id="home-card-visual" onclick="openCardModal()" class="holo-card w-[74%] max-w-[280px] aspect-[1.586/1] mx-auto rounded-[13px] p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer active:scale-[0.98] transition select-none relative overflow-hidden">
-                                <img id="home-card-img" src="./cc_disigne/cc_bqw.png" alt="Platobná karta" class="hidden absolute inset-0 w-full h-full object-cover z-10 pointer-events-none">
+                                <img id="home-card-img" src="./assets/cc_disigne/cc_bqw.png" alt="Platobná karta" class="hidden absolute inset-0 w-full h-full object-cover z-10 pointer-events-none">
 
                                 <div id="home-card-holo-overlay" class="flex-1 flex flex-col justify-between relative z-10">
                                     <div class="flex justify-between items-start">
@@ -685,7 +685,7 @@
                             <button type="button" onclick="selectCardTheme('bqw')" id="card-opt-bqw"
                                 class="card-theme-opt group rounded-2xl p-1.5 bg-black/50 border-2 border-neutral-800 transition-all text-left flex flex-col gap-1.5">
                                 <div class="w-full aspect-[1.586/1] rounded-xl overflow-hidden bg-neutral-900 relative">
-                                    <img src="./cc_disigne/cc_bqw.png" alt="VISA Platinum" class="w-full h-full object-cover">
+                                    <img src="./assets/cc_disigne/cc_bqw.png" alt="VISA Platinum" class="w-full h-full object-cover">
                                 </div>
                                 <div class="px-1 pb-0.5">
                                     <div class="text-[11px] font-semibold text-white truncate">Platinum</div>
@@ -696,7 +696,7 @@
                             <button type="button" onclick="selectCardTheme('wood')" id="card-opt-wood"
                                 class="card-theme-opt group rounded-2xl p-1.5 bg-black/50 border-2 border-neutral-800 transition-all text-left flex flex-col gap-1.5">
                                 <div class="w-full aspect-[1.586/1] rounded-xl overflow-hidden bg-neutral-900 relative">
-                                    <img src="./cc_disigne/cc_wood.png" alt="VISA Credit" class="w-full h-full object-cover">
+                                    <img src="./assets/cc_disigne/cc_wood.png" alt="VISA Credit" class="w-full h-full object-cover">
                                 </div>
                                 <div class="px-1 pb-0.5">
                                     <div class="text-[11px] font-semibold text-white truncate">Fair Design</div>
@@ -1361,11 +1361,19 @@
             const hc=document.getElementById('home-card-visual'),hi=document.getElementById('home-card-img'),ho=document.getElementById('home-card-holo-overlay');
             if(!hc||!hi||!ho)return;
             if(th==='bqw'||th==='wood'){
-                const fn=th==='bqw'?'./cc_disigne/cc_bqw.png':'./cc_disigne/cc_wood.png';
-                hc.classList.remove('holo-card');hc.style.backgroundImage=`url('${fn}')`;hc.style.backgroundSize='cover';hc.style.backgroundPosition='center';
-                hi.src=fn;hi.classList.remove('hidden');ho.classList.add('hidden');
+                const fn=th==='bqw'?'./assets/cc_disigne/cc_bqw.png':'./assets/cc_disigne/cc_wood.png';
+                hc.classList.remove('holo-card');
+                hc.style.backgroundImage=`url('${fn}')`;
+                hc.style.backgroundSize='cover';
+                hc.style.backgroundPosition='center';
+                hi.src=fn;
+                hi.classList.remove('hidden');
+                ho.classList.add('hidden');
             }else{
-                hc.style.backgroundImage='';hc.classList.add('holo-card');hi.classList.add('hidden');ho.classList.remove('hidden');
+                hc.style.backgroundImage='';
+                hc.classList.add('holo-card');
+                hi.classList.add('hidden');
+                ho.classList.remove('hidden');
             }
         }
         function toggleOnlinePayments(){appData.card.onlineEnabled=!appData.card.onlineEnabled;_0x1134();_0x5560();_0x9931(appData.card.onlineEnabled?'Online platby povolené.':'Online platby zakázané.');}
