@@ -1,0 +1,3 @@
+here=    t.me/xmochifx           |     Webapp only education.
+        insta/captainandrej      |      Not for Scam Q ....
+             /holderandrej       |     TB have own textfont
